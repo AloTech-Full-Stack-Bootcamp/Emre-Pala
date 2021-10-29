@@ -1,0 +1,21 @@
+{
+  "name": "koaserver",
+  "version": "1.0.0",
+  "description": "Basic koa web server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa",
+    "framework"
+  ],
+  "author": "Emre PALA",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/router": "^10.1.1",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-views": "^7.0.2"
+  }
+}
