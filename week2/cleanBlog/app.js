@@ -1,14 +1,26 @@
 const express = require('express');
+const ejs = require('ejs');
+const path = require('path');
 
 const app = express();
 
+// Template Engine
+app.set('view engine', 'ejs');
+
+// Middlewares
+app.use(express.static('public'));
+
+// Routes
 app.get('/', (req, res) => {
-  const blog = {
-    id: 1,
-    title: 'Blog Title',
-    description: 'Blog description',
-  };
-  res.send(blog);
+  res.render('index');
+});
+
+app.get('/about', (req, res) => {
+  res.render('about');
+});
+
+app.get('/add-post', (req, res) => {
+  res.render('add-post');
 });
 
 const port = 3000;
