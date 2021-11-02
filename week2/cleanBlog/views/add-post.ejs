@@ -23,7 +23,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <form novalidate>
+
+          <form action="/add-post" method="POST" class="tm-contact-form">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
                 <label>Post Title</label>
@@ -31,6 +32,7 @@
                   type="text"
                   class="form-control"
                   placeholder="Name"
+                  name="title"
                   id="name"
                   required
                   data-validation-required-message="Please enter your name."
@@ -45,6 +47,7 @@
                   rows="5"
                   class="form-control"
                   placeholder="Message"
+                  name="detail"
                   id="message"
                   required
                   data-validation-required-message="Please enter a message."
