@@ -27,13 +27,24 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <p><%= post.detail %></p>
-
-         
-          
         </div>
       </div>
     </div>
   </article>
+
+  <div class="row mb-5 pb-1">
+    <div class="col-xl-12 col-lg-7">
+      <!-- Share box -->
+      <div class="tm-bg-gray tm-share-box">
+        <div class="text-center">
+          <a href="/edit-post/<%= post._id %>" class="btn btn-primary p-3 mb-4 tm-btn-animate tm-btn-download tm-icon-download"><span>Update Details</span></a>	
+        </div>	
+        <div class="text-center">
+          <a href="/edit-post/<%= post._id %>?_method=DELETE" class="btn btn-danger p-3 tm-btn-animate tm-btn-download tm-icon-download" onclick="return confirm('ARE YOU SURE?')"><span>Delete Photo</span></a>	
+        </div>								
+      </div>
+    </div>
+  </div>
 
   <hr>
 
