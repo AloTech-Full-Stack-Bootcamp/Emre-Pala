@@ -8,10 +8,21 @@ const pageController = require('./controllers/pageController');
 const app = express();
 
 // Connect DB
-mongoose.connect('mongodb://localhost/cleanblog-test-db', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+mongoose
+    .connect(
+        'mongodb+srv://emre:9Q3pgpT7axeoM1fO@cleanblog.vo4e8.mongodb.net/cleanblog-db?retryWrites=true&w=majority',
+        {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        }
+    )
+    .then(() => {
+        console.log('Db Connected!');
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+// This is a demo app , if you deploy a real application please hide your db password!!!
 
 // Template Engine
 app.set('view engine', 'ejs');
@@ -37,7 +48,7 @@ app.get('/about', pageController.getAboutPage);
 app.get('/add-post', pageController.getAddPage);
 app.get('/edit-post/:id', pageController.getEditPage);
 
-const port = 3000;
+const port = process.env.PORT || 5000; // Use heroku port or use 5000
 app.listen(port, () => {
     console.log(`Sunucu ${port} portunda başlatıldı..`);
 });
