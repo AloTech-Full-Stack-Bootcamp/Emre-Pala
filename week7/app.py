@@ -3,8 +3,7 @@ import random
 
 def random_number_generator(n, l):
     try:
-        random_numbers =set()  # we use set because we dont want to duplicate numbers
-
+        random_numbers = set()  # we use set because we don't want to duplicate numbers
         while (len(random_numbers)<=n-1):
             x = random.randrange((10 ** (l - 1)), (10 ** (l)))  
             random_numbers.add(x)
