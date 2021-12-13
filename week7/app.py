@@ -11,8 +11,6 @@ def random_number_generator(n, l):
         yield random_numbers
     except:
         print("You need to enter proper values (n and l can't be negative or zero)")
-    
-print(list(random_number_generator(5, 7)))
 
 # CASE 2 Answer
 
@@ -28,4 +26,7 @@ def my_awesome_decorator(fun):
 def mod_batch(*numbers):
     return all([True if number % 3 == 0 else False for number in numbers])
 
-print(mod_batch(3,6,21))
+# Test Cases
+if __name__ == "__main__":
+    print(list(random_number_generator(5, 7)))
+    print(mod_batch(3,6,21))
